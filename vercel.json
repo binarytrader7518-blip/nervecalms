@@ -1,0 +1,68 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/order",
+      "destination": "/order.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/go/1",
+      "destination": "https://getnervecalm.com/dtc/?aff_id=275930",
+      "permanent": false
+    },
+    {
+      "source": "/go/3",
+      "destination": "https://getnervecalm.com/dtc/?aff_id=275930",
+      "permanent": false
+    },
+    {
+      "source": "/go/6",
+      "destination": "https://getnervecalm.com/dtc/?aff_id=275930",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/go/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/order(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/key.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    }
+  ]
+}
